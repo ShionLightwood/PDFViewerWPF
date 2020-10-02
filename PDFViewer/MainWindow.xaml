@@ -1,0 +1,19 @@
+﻿<Window x:Class="PDFViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mpp="clr-namespace:MoonPdfLib;assembly=MoonPdfLib"
+        xmlns:local="clr-namespace:PDFViewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="800">
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ItemsControl>
+                    <mpp:MoonPdfPanel x:Name="moonPdfPanel" Width="{Binding RelativeSource={RelativeSource FindAncestor, 
+    AncestorType={x:Type ListBox}},Path=ActualWidth}" Background="LightGray" ViewType="SinglePage"
+                          PageMargin="0,2,4,2" AllowDrop="True" />
+            </ItemsControl>
+        </ListBox>
+    </StackPanel>
+</Window>
